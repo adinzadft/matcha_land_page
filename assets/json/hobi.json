@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Jajan",
+    "description": "Akan kulawan dunia, tapi benyat jajan dulu",
+    "image": "assets/img/jajan.jpg"
+  },
+  {
+    "name": "Baca Novel",
+    "description": "Kok bisa berjam-jam cuma duduk baca novel",
+    "image": "assets/img/novel.jpg"
+  },
+  {
+    "name": "Drakor",
+    "description": "Lee Dong Wook terusssss",
+    "image": "assets/img/drakor.jpg"
+  }
+]

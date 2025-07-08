@@ -1,0 +1,132 @@
+
+:root {
+    --primary-1 : #ece0da;
+    --primary-2 : #f1c8cb;
+    --primary-3 : #f6b0bb;
+    --primary-4 : #9cad8c;
+    --primary-5 : #7e8c69;
+
+}
+
+/* archivo */
+.archivo{
+    font-family: "Archivo", sans-serif !important;
+}
+
+.archivo-regular {
+  font-family: "Archivo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.archivo-bold {
+  font-family: "Archivo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+.archivo-regular {
+  font-family: "Archivo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+/* poppins */
+.poppins{
+    font-family: "Poppins", sans-serif !important;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* component */
+
+.image{
+    height: 500px;
+    border: 2px solid rgb(29, 29, 29) !important;
+    border-radius: 20px !important;
+
+}
+.image2{
+  border: 2px solid rgb(29, 29, 29) !important;
+    border-radius: 20px !important;
+}
+
+.btn-primary{
+    background-color: var(--primary-5) !important;
+    border-color: rgb(29, 29, 29) !important;
+}
+
+.btn-primary:hover{
+    background-color: var(--primary-4) !important;
+}
+
+.btn-outline-dark{
+    background-color: var(--primary) !important;
+    font-size: 14px !important;
+    color: white !important;
+    border: 2px solid var(--primary) !important;
+    border-radius: 40px !important;
+}
+
+.btn-outline-dark:hover{
+    background-color: var(--primary-focus) !important;
+}
+
+.card{
+    font-size: 14px !important;
+    border: 2px solid var(--primary) !important;
+    border-radius: 20px !important;
+}
+
+.card-img-top{
+    padding: 10px !important;
+    border: 2px solid transparent !important;
+    border-radius: 20px !important;
+}
+
+.form-control{
+    background-color: #FFF8F0 !important;
+    border: 2px solid var(--primary) !important;
+    
+}
+input#nama, textarea#pesan {
+  width: 100% !important;
+}
+
+
+/* navbar */
+
+
+.nav-link:hover{
+    color: var(--primary-5) !important;
+}
