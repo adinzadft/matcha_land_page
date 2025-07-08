@@ -1,0 +1,22 @@
+[
+  {
+    "name": "HIVI",
+    "description": "Lagunya emang seru-seru, ",
+    "image": "assets/img/hivi.jpg"
+  },
+  {
+    "name": "Niki",
+    "description": "No comment, tapi aku suka lowkey, fav-mu apa?",
+    "image": "assets/img/niki.jpg"
+  },
+  {
+    "name": "Hindia",
+    "description": "Enak ga si buat nge galau",
+    "image": "assets/img/hindia.jpg"
+  },
+  {
+    "name": "Nadin Amizah",
+    "description": "Gila wes gila",
+    "image": "assets/img/nadin.jpg"
+  }
+]
