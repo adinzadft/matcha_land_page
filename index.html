@@ -1,182 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee not Matcha</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee not Matcha anyway</title>
 
-    <!-- css -->
-    <link rel="stylesheet" href="style/style.css">
+  <!-- css -->
+  <link rel="stylesheet" href="style/style.css" />
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
 
-    <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
+  <style>
+    body {
+      background-color: #fff8f0;
+    }
+    .poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
 </head>
-<script>
-  fetch('https://api.sampleapis.com/coffee/hot')
-    .then(response => response.json())
-    .then(data => {
-      const container = document.getElementById('product-list');
-      let html = '';
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-transparent">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <img src="./assets/icon/logo.svg" alt="Logo" width="100px" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-4 poppins">
+          <li class="nav-item">
+            <a class="nav-link active fw-medium" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#product">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-      data.slice(0,8).forEach(item => {
-        html += `
-          <div class="col-md-3">
-            <div class="card h-100 p-2">
-              <img src="${item.image}" class="card-img-top " width="10px" alt="${item.title}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image';">
-              <div class="card-body">
-                <h5 class="card-title fw-bold">${item.title}</h5>
-                <p class="card-text small">${item.description || 'Deskripsi tidak tersedia.'}</p>
-                <a href="#" class="btn btn-outline-dark fw-semibold p-3">Pesan Sekarang</a>
+  <!-- Home Section -->
+  <section id="home" class="container poppins py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h1 class="fs-1 fw-bold">Lahirkan Inspirasi, Gausah Terburu Buru ayo kita Ngopi dulu</h1>
+        <p style="color: #555">Kedai kopi inspiratif yang bisa membuat anda larut dalam ketenangan dan melahirkan inspirasi baru dikala anda suntuk</p>
+        <button class="btn btn-primary px-4 py-2">Pesan Sekarang</button>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="./assets/img/kopi.png" alt="kopi" class="img-fluid" />
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-6 d-flex justify-content-between">
+        <div class="ps-2 border-start border-4 border-dark">
+          <span class="fw-bold fs-4" style="color: #814E2B;">1k+</span><br />
+          <span class="fw-medium fs-5">Pelanggan Senang</span>
+        </div>
+        <div class="ps-2 border-start border-4 border-dark">
+          <span class="fw-bold fs-4" style="color: #814E2B;">20+</span><br />
+          <span class="fw-medium fs-5">Cabang Outlet</span>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0 border border-dark p-3">
+        <h3 class="fw-bold fs-6" style="color: #814E2B;">Classic Americano</h3>
+        <p class="mb-0" style="font-size: 14px">Kopi Americano klasik dengan aroma yang menggoda, memberikan pengalaman kopi yang sederhana dan memikat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container poppins my-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="./assets/img/kopi2.png" alt="kopi2" class="img-fluid" />
+      </div>
+      <div class="col-lg-6">
+        <h1 class="fw-bold mb-2 fs-3">About</h1>
+        <p class="fs-6">Kami adalah tempat di mana aroma kopi segar, keramahan, dan semangat komunitas berkumpul untuk menciptakan pengalaman kopi yang tak terlupakan.</p>
+        <p class="fs-6">Kami berkomitmen menyajikan kopi terbaik dari berbagai sudut dunia, disangrai dengan teliti untuk rasa khas dalam setiap cangkir.</p>
+        <a class="btn btn-primary px-4 py-2 mt-3">Jelajahi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Section -->
+  <section id="product" class="container poppins my-5">
+    <h2 class="text-center mb-4 fw-bold">Product</h2>
+    <div id="product-list" class="row g-4">
+      <!-- Kartu produk dari API akan muncul di sini -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container poppins py-5">
+    <h2 class="text-center mb-4 fw-bold">Contact</h2>
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="./assets/img/kopi3.png" alt="kopi3" class="img-fluid" />
+      </div>
+      <div class="col-lg-6">
+        <form>
+          <div class="mb-3">
+            <label for="nama" class="form-label fw-semibold">Nama</label>
+            <input type="text" class="form-control" id="nama" placeholder="" />
+          </div>
+          <div class="mb-3">
+            <label for="pesan" class="form-label fw-semibold">Pesan</label>
+            <textarea class="form-control" id="pesan" rows="5" placeholder=""></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary px-5 mt-3 fw-semibold">Kirim</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script -->
+  <script>
+    fetch('https://api.sampleapis.com/coffee/hot')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('product-list');
+        let html = '';
+
+        data.slice(0, 8).forEach(item => {
+          html += `
+            <div class="col-md-3 col-sm-6">
+              <div class="card h-100 p-2">
+                <img src="${item.image}" class="card-img-top" alt="${item.title}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image';">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">${item.title}</h5>
+                  <p class="card-text small">${item.description || 'Deskripsi tidak tersedia.'}</p>
+                  <a href="#" class="btn btn-outline-dark fw-semibold p-2">Pesan Sekarang</a>
+                </div>
               </div>
             </div>
-          </div>
-        `;
+          `;
+        });
+
+        container.innerHTML = html;
+      })
+      .catch(error => {
+        console.error('Gagal mengambil produk:', error);
+        document.getElementById('product-list').innerHTML = '<p class="text-danger">Gagal memuat produk.</p>';
       });
-
-
-      container.innerHTML = html;
-    })
-    .catch(error => {
-      console.error('Gagal mengambil produk:', error);
-      document.getElementById('product-list').innerHTML = '<p class="text-danger">Gagal memuat produk.</p>';
-    });
-</script>
-
-
-<body style="background-color: #FFF8F0;">
-    <!-- navbar -->
-     <nav class="navbar navbar-expand-lg bg-transparent">
-  <div class="container">
-  <a class="navbar-brand" href="#home">
-    <img src="./assets/icon/logo.svg" alt="Logo" width="100px">
-  </a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto gap-4 poppins" style="transform: translateY(10px);">
-      <li class="nav-item">
-        <a class="nav-link active fw-medium" aria-current="page" href="#home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#about">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#product">Product</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#contact">Contact</a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-</nav>
-     <!-- navbar end -->
-
-     <!-- main -->
-      <div id="home" class="container poppins">
-        <div class="row">
-            <div class="col-6 d-flex align-items-center">
-                <div>
-                    <h1 class="fs-1 fw-bold">
-                    Lahirkan Inspirasi, Gausah Terburu Buru ayo kita Ngopi dulu
-                </h1>
-                <p style="color: #555555;">
-                    Kedai kopi inspiratif yang bisa membuat anda larut dalam ketenangan dan melahirkan inspirasi baru dikala anda suntuk
-                </p>
-                <button class="btn btn-primary px-4 py-2">Pesan Sekarang</button>
-                </div>
-            </div>
-            <div class="col-6 text-end">
-                <img src="./assets/img/kopi.png" alt="kopi" width="100%" >
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-6 d-flex gap-5 align-items-center">
-                <div>
-                    <div class="d-flex flex-column ps-2" style="border-left: 4px solid #814E2B;">
-                        <span class="fw-bold fs-4" style="color: #814E2B;">1k+</span>
-                        <span class="fw-medium fs-5">Pelanggan Senang</span>
-                    </div>
-                </div>
-                <div>
-                    <div class="d-flex flex-column ps-2" style="border-left: 4px solid #814E2B;">
-                        <span class="fw-bold fs-4" style="color: #814E2B;">20+</span>
-                        <span class="fw-medium fs-5">Cabang Outlet</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 d-flex flex-column p-4" style="border: 2px solid #814E2B;">
-                <h3 class="fw-bold" style="font-size: 15px; color: #814E2B;">
-                    Classic Americano
-                </h3>
-                <p class="mb-0" style="font-size: 12px; color: #1A1818;">
-                    Kopi Americano klasik dengan aroma yang menggoda, memberikan pengalaman kopi yang sederhana dan memikat.
-                </p>
-            </div>
-        </div>
-
-      </div>
-
-      <div id="about" class="container poppins">
-        <div class="row my-5">
-            <div class="col-6">
-                <img src="./assets/img/kopi2.png" alt="kopi2" width="100%" style="transform: translateX(-40px);">
-            </div>
-            <div class="col-6 d-flex align-items-center">
-                <div>
-                    <h1 class="fw-bold mb-2" style="font-size: 32px;">
-                        About
-                    </h1>
-                    <p  style="font-size: 14px;">
-                        Kami adalah tempat di mana aroma kopi segar, keramahan, dan semangat komunitas berkumpul untuk menciptakan pengalaman kopi yang tak terlupakan.
-                        <span class="d-block mt-3">kami berkomitmen untuk menyajikan kopi terbaik dari berbagai sudut dunia. Setiap biji kopi dipilih dengan cermat dan disangrai dengan teliti untuk menghadirkan cita rasa yang khas dan nikmat dalam setiap cangkir.</span>
-                    </p>
-                    <a class="btn btn-primary px-5 py-2 my-5">Jelajahi</a>
-
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div id="product" class="container poppins my-5">
-  <h2 class="text-center mb-4 fw-bold">Product</h2>
-  <div id="product-list" class="row g-4">
-    <!-- Kartu produk dari API akan muncul di sini -->
-  </div>
-        </div>
-        <h2 class="text-center mb-4 fw-bold poppins">Contact</h2>
-        <div id="contact" class="container poppins">
-        <div class="row">
-            <div class="col-6">
-                <img src="./assets/img/kopi3.png" alt="kopi3" width="100%" style="transform: translateX(-40px);">
-            </div>
-            <div class="col-6 py-5">
-                <form>
-        <div class="mb-3">
-          <label for="nama" class="form-label fw-semibold">Nama</label>
-          <input type="text" class="form-control border-2" id="nama" placeholder="">
-        </div>
-        <div class="mb-3">
-          <label for="pesan" class="form-label fw-semibold">Pesan</label>
-          <textarea class="form-control border-2 h-100 w-100" id="pesan" rows="5" placeholder=""></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary px-5 my-5 fw-semibold">Kirim</button>
-      </form>
-    
-            </div>
-        </div>
-      </div>
-        
-
-      <!-- main end -->
+  </script>
 </body>
 </html>
