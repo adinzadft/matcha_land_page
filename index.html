@@ -1,185 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heheh</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee not Matcha</title>
 
-  <!-- css -->
-  <link rel="stylesheet" href="style/style.css">
+    <!-- css -->
+    <link rel="stylesheet" href="style/style.css">
 
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 
-  <!-- font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
-
 <script>
-  fetch('assets/json/hobi.json')
+  fetch('https://api.sampleapis.com/coffee/hot')
     .then(response => response.json())
     .then(data => {
       const container = document.getElementById('product-list');
       let html = '';
 
-      data.forEach(product => {
+      data.slice(0,8).forEach(item => {
         html += `
-          <div class="col-md-3 col-6">
-            <div class="card h-100">
-              <img src="${product.image}" class="card-img-top" alt="${product.name}">
+          <div class="col-md-3">
+            <div class="card h-100 p-2">
+              <img src="${item.image}" class="card-img-top " width="10px" alt="${item.title}" onerror="this.src='https://via.placeholder.com/300x200?text=No+Image';">
               <div class="card-body">
-                <h5 class="card-title fw-bold">${product.name}</h5>
-                <p class="card-text small">${product.description}</p>
-                <a href="#" class="btn btn-outline-dark">Pesan Sekarang</a>
+                <h5 class="card-title fw-bold">${item.title}</h5>
+                <p class="card-text small">${item.description || 'Deskripsi tidak tersedia.'}</p>
+                <a href="#" class="btn btn-outline-dark fw-semibold p-3">Pesan Sekarang</a>
               </div>
             </div>
           </div>
         `;
       });
 
-      container.innerHTML = html;
-    })
-    .catch(error => {
-      console.error('Gagal memuat produk:', error);
-    });
-
-  fetch('assets/json/song.json')
-    .then(response => response.json())
-    .then(data => {
-      const container = document.getElementById('song-list');
-      let html = '';
-
-      data.forEach(product => {
-        html += `
-          <div class="col-md-3 col-6">
-            <div class="card h-100">
-              <img src="${product.image}" class="card-img-top" alt="${product.name}">
-              <div class="card-body">
-                <h5 class="card-title fw-bold">${product.name}</h5>
-                <p class="card-text small">${product.description}</p>
-                <a href="#" class="btn btn-outline-dark">Pesan Sekarang</a>
-              </div>
-            </div>
-          </div>
-        `;
-      });
 
       container.innerHTML = html;
     })
     .catch(error => {
-      console.error('Gagal memuat produk:', error);
+      console.error('Gagal mengambil produk:', error);
+      document.getElementById('product-list').innerHTML = '<p class="text-danger">Gagal memuat produk.</p>';
     });
-
-  function showAlert() {
-    alert('LOVE YOURSELF REFI!!!!');
-  }
-
-  function showAlert2() {
-    alert('Aku selalu disini kok, kalo butuh datang aja');
-  }
 </script>
 
 
-<body style="background-color: #a7b39c;">
-  <audio autoplay loop hidden>
-    <source src="assets/mp3/lagu-hivi.mp3" type="audio/mpeg">
-    Browser kamu tidak mendukung audio.
-  </audio>
+<body style="background-color: #FFF8F0;">
+    <!-- navbar -->
+     <nav class="navbar navbar-expand-lg bg-transparent">
+  <div class="container">
+  <a class="navbar-brand" href="#home">
+    <img src="./assets/icon/logo.svg" alt="Logo" width="100px">
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto gap-4 poppins" style="transform: translateY(10px);">
+      <li class="nav-item">
+        <a class="nav-link active fw-medium" aria-current="page" href="#home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#product">Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-lg bg-transparent">
-    <div class="container">
-      <a class="navbar-brand" href="#home">
-        <img src="./assets/icon/logo-matcha.png" alt="Logo" width="100px">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto gap-4 poppins">
-          <li class="nav-item"><a class="nav-link active fw-medium" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
-          <li class="nav-item"><a class="nav-link" href="#song">Top Song</a></li>
-          <li class="nav-item"><a class="nav-link" href="#pesan">Message</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- navbar end -->
+</nav>
+     <!-- navbar end -->
 
-  <!-- main -->
-  <div id="home" class="container poppins py-5">
-    <div class="row row-cols-1 row-cols-md-2 align-items-center">
-      <div class="col mb-4">
-        <h1 class="fs-1 fw-bold">Matcha Lovers,<br>REFI HIDAYAH</h1>
-        <p style="color: #454444;">Tenangnya seperti senja yang meresap perlahan— walaupun banyak bicara, tapi hangat terasa. Di tiap teguk hijau itu, tersimpan jiwa yang dalam dan rasa yang jujur.</p>
-        <button class="btn btn-primary px-4 py-2" onclick="showAlert()">Message</button>
-      </div>
-      <div class="col text-center">
-        <img class="img-fluid" src="./assets/img/foto1.png" alt="foto1">
-      </div>
-    </div>
-
-    <div class="row row-cols-1 row-cols-md-2 mt-5 g-4">
-      <div class="col d-flex gap-4">
-        <div class="d-flex flex-column ps-2 border-start border-4" style="border-color:#7e8c69;">
-          <span class="fw-bold fs-4" style="color: #7e8c69;">Zodiak</span>
-          <span class="fw-medium fs-5">Taurus</span>
+     <!-- main -->
+      <div id="home" class="container poppins">
+        <div class="row">
+            <div class="col-6 d-flex align-items-center">
+                <div>
+                    <h1 class="fs-1 fw-bold">
+                    Lahirkan Inspirasi, Gausah Terburu Buru ayo kita Ngopi dulu
+                </h1>
+                <p style="color: #555555;">
+                    Kedai kopi inspiratif yang bisa membuat anda larut dalam ketenangan dan melahirkan inspirasi baru dikala anda suntuk
+                </p>
+                <button class="btn btn-primary px-4 py-2">Pesan Sekarang</button>
+                </div>
+            </div>
+            <div class="col-6 text-end">
+                <img src="./assets/img/kopi.png" alt="kopi" width="100%" >
+            </div>
         </div>
-        <div class="d-flex flex-column ps-2 border-start border-4" style="border-color:#7e8c69;">
-          <span class="fw-bold fs-4" style="color: #7e8c69;">MBTI</span>
-          <span class="fw-medium fs-5">INFP</span>
+
+        <div class="row mt-5">
+            <div class="col-6 d-flex gap-5 align-items-center">
+                <div>
+                    <div class="d-flex flex-column ps-2" style="border-left: 4px solid #814E2B;">
+                        <span class="fw-bold fs-4" style="color: #814E2B;">1k+</span>
+                        <span class="fw-medium fs-5">Pelanggan Senang</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex flex-column ps-2" style="border-left: 4px solid #814E2B;">
+                        <span class="fw-bold fs-4" style="color: #814E2B;">20+</span>
+                        <span class="fw-medium fs-5">Cabang Outlet</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 d-flex flex-column p-4" style="border: 2px solid #814E2B;">
+                <h3 class="fw-bold" style="font-size: 15px; color: #814E2B;">
+                    Classic Americano
+                </h3>
+                <p class="mb-0" style="font-size: 12px; color: #1A1818;">
+                    Kopi Americano klasik dengan aroma yang menggoda, memberikan pengalaman kopi yang sederhana dan memikat.
+                </p>
+            </div>
+        </div>
+
+      </div>
+
+      <div id="about" class="container poppins">
+        <div class="row my-5">
+            <div class="col-6">
+                <img src="./assets/img/kopi2.png" alt="kopi2" width="100%" style="transform: translateX(-40px);">
+            </div>
+            <div class="col-6 d-flex align-items-center">
+                <div>
+                    <h1 class="fw-bold mb-2" style="font-size: 32px;">
+                        About
+                    </h1>
+                    <p  style="font-size: 14px;">
+                        Kami adalah tempat di mana aroma kopi segar, keramahan, dan semangat komunitas berkumpul untuk menciptakan pengalaman kopi yang tak terlupakan.
+                        <span class="d-block mt-3">kami berkomitmen untuk menyajikan kopi terbaik dari berbagai sudut dunia. Setiap biji kopi dipilih dengan cermat dan disangrai dengan teliti untuk menghadirkan cita rasa yang khas dan nikmat dalam setiap cangkir.</span>
+                    </p>
+                    <a class="btn btn-primary px-5 py-2 my-5">Jelajahi</a>
+
+                </div>
+            </div>
         </div>
       </div>
-      <div class="col border p-4" style="border-color:#7e8c69;">
-        <h3 class="fw-bold text-success" style="font-size: 15px;">Matcha Latte</h3>
-        <p class="mb-0 small">Ia punya banyak ingin, bukan karena tak bersyukur, tapi karena hatinya luas dan hidup terasa sayang untuk disia-siakan. Namun ia tak pernah memaksa— ia tahu, yang tumbuh dengan sabar selalu lebih indah daripada yang dipetik paksa.</p>
-      </div>
-    </div>
-  </div>
 
-  <div id="about" class="container poppins py-5">
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col">
-        <img class="img-fluid" src="./assets/img/image2.png" alt="img2">
-      </div>
-      <div class="col d-flex align-items-center">
-        <div>
-          <h1 class="fw-bold mb-2" style="font-size: 32px;">About</h1>
-          <p style="font-size: 14px;">Dia perempuan yang tenang, tapi hatinya dalam. Taurus yang kuat, INFP yang lembut—penuh rasa, tapi tak suka memaksa. Ia punya banyak mimpi, tapi tak ingin memaksa dunia untuk ikut. Masih belajar menyembuhkan masa lalu, perlahan, tanpa drama. Ia tak sempurna, tapi terus mencoba. Dalam secangkir matcha dan sunyi yang ia pilih sendiri, ia menemukan cara untuk tetap tumbuh… meski pernah patah.</p>
-          <a class="btn btn-primary px-5 py-2 my-3" onclick="showAlert2()">Jelajahi</a>
+      <div id="product" class="container poppins my-5">
+  <h2 class="text-center mb-4 fw-bold">Product</h2>
+  <div id="product-list" class="row g-4">
+    <!-- Kartu produk dari API akan muncul di sini -->
+  </div>
+        </div>
+        <h2 class="text-center mb-4 fw-bold poppins">Contact</h2>
+        <div id="contact" class="container poppins">
+        <div class="row">
+            <div class="col-6">
+                <img src="./assets/img/kopi3.png" alt="kopi3" width="100%" style="transform: translateX(-40px);">
+            </div>
+            <div class="col-6 py-5">
+                <form>
+        <div class="mb-3">
+          <label for="nama" class="form-label fw-semibold">Nama</label>
+          <input type="text" class="form-control border-2" id="nama" placeholder="">
+        </div>
+        <div class="mb-3">
+          <label for="pesan" class="form-label fw-semibold">Pesan</label>
+          <textarea class="form-control border-2 h-100 w-100" id="pesan" rows="5" placeholder=""></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary px-5 my-5 fw-semibold">Kirim</button>
+      </form>
+    
+            </div>
         </div>
       </div>
-    </div>
-  </div>
+        
 
-  <div id="hobbies" class="container poppins py-5">
-    <h2 class="text-center mb-4 fw-bold">Hobbies</h2>
-    <div id="product-list" class="row g-4"></div>
-  </div>
-
-  <div id="song" class="container poppins py-5">
-    <h2 class="text-center mb-4 fw-bold">Top Song</h2>
-    <div id="song-list" class="row g-4"></div>
-  </div>
-
-  <div id="pesan" class="container poppins py-5">
-    <h2 class="text-center mb-4 fw-bold">Message</h2>
-    <div class="row row-cols-1 row-cols-md-2">
-      <div class="col mb-3">
-        <img class="img-fluid" src="./assets/img/image.png" alt="kopi3">
-      </div>
-      <div class="col">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScAR7LWP2koUc69toGI6_M8FbS78IycGhmwPWn49cB90LjEvQ/viewform?embedded=true" width="100%" height="500" frameborder="0" style="border:2px solid #7e8c69;"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+      <!-- main end -->
 </body>
 </html>
